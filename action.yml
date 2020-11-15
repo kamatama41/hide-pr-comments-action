@@ -1,0 +1,15 @@
+name: 'Hide pull request comments action'
+description: 'Hide PR comments by given condition'
+inputs:
+  github_token:
+    description: 'Access token of GitHub'
+    required: true
+  author:
+    description: 'Username of author'
+    required: false
+  message_regex:
+    description: 'Regexp of comment'
+    required: false
+runs:
+  using: "docker"
+  image: "Dockerfile"

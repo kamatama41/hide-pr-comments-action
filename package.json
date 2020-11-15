@@ -1,0 +1,24 @@
+{
+  "name": "hide-pr-comments-action",
+  "version": "1.0.0",
+  "description": "A GitHub action to hide PR comments by given condition",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kamatama41/hide-pr-comments-action.git"
+  },
+  "keywords": [],
+  "author": "kamatama41",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kamatama41/hide-pr-comments-action/issues"
+  },
+  "homepage": "https://github.com/kamatama41/hide-pr-comments-action#readme",
+  "dependencies": {
+    "@actions/core": "^1.2.6",
+    "@actions/github": "^4.0.0"
+  }
+}
