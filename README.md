@@ -12,7 +12,6 @@ jobs:
   hide-pr-comments-action:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
     - name: Hide PR comments
       id: action
       uses: kamatama41/hide-pr-comments-action@v0
