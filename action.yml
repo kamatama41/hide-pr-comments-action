@@ -4,6 +4,7 @@ inputs:
   github_token:
     description: 'Access token of GitHub'
     required: true
+    default: ${{ github.token }}
   author:
     description: 'Username of author'
     required: false
