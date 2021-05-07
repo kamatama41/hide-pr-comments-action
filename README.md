@@ -16,7 +16,6 @@ jobs:
       id: action
       uses: kamatama41/hide-pr-comments-action@v0
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
         author: my-system-bot                 # OPTIONAL
         message_regex: "Test result: (OK|NG)" # OPTIONAL
 ```
