@@ -24,9 +24,9 @@ jobs:
           check_for_duplicate_msg: false
       - name: Get PR number
         id: pr_number
-        uses: kamatama41/get-pr-number-action@v0
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+        run: echo "::set-output name=pr_number::$(gh pr view --json number -q .number || echo "")"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Run action
         id: action
         uses: ./
@@ -34,4 +34,4 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           author: github-actions
           message_regex: should be hidden \[push\]$
-          pr_number: ${{ steps.pr_number.outputs.number }}
+          pr_number: ${{ steps.pr_number.outputs.pr_number }}
