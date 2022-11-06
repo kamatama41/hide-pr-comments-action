@@ -11,6 +11,9 @@ inputs:
   message_regex:
     description: 'Regexp of comment'
     required: false
+  pr_number:
+    description: 'Number of pull request. Must be set if event_type is not pull_requset'
+    required: false
 runs:
   using: "docker"
   image: "Dockerfile"

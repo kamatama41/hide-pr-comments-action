@@ -104,10 +104,14 @@ function filterComments(comments, condition) {
 
 async function main() {
   core.debug(`The context info: ${JSON.stringify(github.context, undefined, 2)}`);
-  if (github.context.eventName !== 'pull_request') {
-    throw new Error(`Unsupported event: ${github.context.eventName}`)
+  let prNumber
+  if (github.context.eventName === 'pull_request') {
+    prNumber = github.context.payload['number']
+  } else if (core.getInput('pr_number')) {
+    prNumber = core.getInput('pr_number')
+  } else {
+    throw new Error(`pr_number must be specified with the event ${github.context.eventName}`)
   }
-  const prNumber = github.context.payload['number'];
   core.info(`Delete unhidden comments of #${prNumber}`)
   const repo = github.context.payload.repository
   const owner = repo.owner.login
