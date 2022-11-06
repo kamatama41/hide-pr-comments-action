@@ -11,14 +11,14 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        msg: "This message is posted by a human, should not be hidden."
+        msg: "This message is posted by a human, should not be hidden [pull_request]"
         check_for_duplicate_msg: false
     - name: Comment PR 2
       uses: unsplash/comment-on-pr@master
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        msg: "This message is posted by a bot, should be hidden."
+        msg: "This message is posted by a bot, should be hidden [pull_request]"
         check_for_duplicate_msg: false
     - name: Run action
       id: action
@@ -26,4 +26,4 @@ jobs:
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         author: github-actions
-        message_regex: should be hidden\.$
+        message_regex: should be hidden \[pull_request\]\$
