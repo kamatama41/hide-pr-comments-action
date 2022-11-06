@@ -18,4 +18,5 @@ jobs:
       with:
         author: my-system-bot                 # OPTIONAL filter comments by the author
         message_regex: "Test result: (OK|NG)" # OPTIONAL filter comments by the regexp
+        pr_number: 1                          # OPTIONAL use this option to apply to specific pull request
 ```
