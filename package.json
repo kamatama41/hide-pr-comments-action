@@ -20,7 +20,7 @@
   "homepage": "https://github.com/kamatama41/hide-pr-comments-action#readme",
   "dependencies": {
     "@actions/core": "^1.10.0",
-    "@actions/github": "^5.1.1"
+    "@actions/github": "^6.0.1"
   },
   "devDependencies": {
     "@vercel/ncc": "^0.45.0"
