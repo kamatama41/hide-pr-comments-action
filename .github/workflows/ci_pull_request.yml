@@ -5,7 +5,12 @@ jobs:
     runs-on: ubuntu-latest
     name: Continuous integration
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v7
+    - name: Check dist is up to date
+      run: |
+        npm ci
+        npm run build
+        git diff --exit-code dist
     - name: Comment PR 1
       uses: unsplash/comment-on-pr@master
       env:
